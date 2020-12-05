@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ihtprototype/shared/drawer.dart';
 // import 'package:ihtprototype/screens/liquids.dart';
 // import 'package:ihtprototype/screens/solids.dart';
 
@@ -13,12 +14,14 @@ class _FeedingState extends State<Feeding> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      
       child: Scaffold(
         backgroundColor: Colors.amber[50],
           appBar: AppBar(
             title: Text('Feeding'),
             backgroundColor: Colors.black87,
           ),
+          drawer: DrawerCode(),
           body: Container(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,

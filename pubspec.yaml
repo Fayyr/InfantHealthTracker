@@ -52,14 +52,15 @@ dev_dependencies:
 # The following section is specific to Flutter.
 flutter:
   assets:
-    - assets/images/milkbottle.png
-    - assets/images/baby.png
-    - assets/images/babysta.png
-    - assets/images/settings.png
-    - assets/images/zzz.png
-    - assets/images/growth.png
-    - assets/images/note.png
-    - assets/images/login.png
+    - assets/
+    # - assets/images/milkbottle.png
+    # - assets/images/baby.png
+    # - assets/images/babysta.png
+    # - assets/images/settings.png
+    # - assets/images/zzz.png
+    # - assets/images/growth.png
+    # - assets/images/note.png
+    # - assets/images/login.png
  
   
   # The following line ensures that the Material Icons font is
