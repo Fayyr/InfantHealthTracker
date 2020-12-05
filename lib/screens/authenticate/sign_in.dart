@@ -1,3 +1,4 @@
+import 'package:google_fonts/google_fonts.dart';
 import 'package:ihtprototype/services/auth.dart';
 import 'package:ihtprototype/shared/constants.dart';
 import 'package:ihtprototype/shared/loading.dart';
@@ -26,15 +27,26 @@ class _SignInState extends State<SignIn> {
     return loading
         ? Loading()
         : Scaffold(
+            resizeToAvoidBottomPadding: false,
             backgroundColor: Colors.amber[50],
             appBar: AppBar(
-              backgroundColor: Color.fromRGBO(246, 127, 0, 0.9),
+              backgroundColor: Colors.black87,
               elevation: 0.0,
-              title: Text('Sign in to IHT'),
+              title: Text('InfantHealth',
+              style: GoogleFonts.raleway(
+                fontWeight: FontWeight.w600
+              ),),
               actions: <Widget>[
                 FlatButton.icon(
-                  icon: Icon(Icons.person),
-                  label: Text('Register'),
+                  icon: Icon(Icons.person,
+                  color:Colors.white,),
+                  label: Text('Register',
+                  
+                  style: GoogleFonts.raleway(
+                    textStyle: TextStyle(color: Colors.white),
+                    fontWeight: FontWeight.w600
+                    
+                  ),),
                   onPressed: () => widget.toggleView(),
                 ),
               ],
@@ -68,7 +80,7 @@ class _SignInState extends State<SignIn> {
                     ),
                     SizedBox(height: 40.0),
                     RaisedButton(
-                        color: Colors.pink[400],
+                        color: Colors.orange,
                         child: Text(
                           'Sign In',
                           style: TextStyle(color: Colors.white),

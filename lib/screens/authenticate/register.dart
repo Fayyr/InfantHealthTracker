@@ -2,6 +2,7 @@ import 'package:ihtprototype/services/auth.dart';
 import 'package:ihtprototype/shared/constants.dart';
 import 'package:ihtprototype/shared/loading.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Register extends StatefulWidget {
   final Function toggleView;
@@ -26,15 +27,20 @@ class _RegisterState extends State<Register> {
     return loading
         ? Loading()
         : Scaffold(
+            resizeToAvoidBottomPadding: false,
             backgroundColor: Colors.amber[50],
             appBar: AppBar(
-              backgroundColor: Color.fromRGBO(246, 127, 0, 0.9),
+              backgroundColor: Colors.black87,
               elevation: 0.0,
-              title: Text('Sign up to IHT'),
+              title: Text('InfantHealth'),
               actions: <Widget>[
                 FlatButton.icon(
-                  icon: Icon(Icons.person),
-                  label: Text('Sign In'),
+                  icon: Icon(Icons.person,
+                  color: Colors.white,),
+                  label: Text('Sign In',
+                  style: GoogleFonts.raleway(
+                    textStyle: TextStyle(color: Colors.white),
+                    fontWeight: FontWeight.w600),),
                   onPressed: () => widget.toggleView(),
                 ),
               ],
