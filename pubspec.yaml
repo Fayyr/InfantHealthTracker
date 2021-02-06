@@ -30,7 +30,7 @@ dependencies:
   cloud_firestore: ^0.12.9+4
   bloc: ^6.1.0
   google_fonts: ^1.1.1
-  
+  firebase_messaging: ^5.1.2
   
   provider: ^3.1.0
   flutter_spinkit: "^4.0.0"
@@ -52,15 +52,15 @@ dev_dependencies:
 # The following section is specific to Flutter.
 flutter:
   assets:
-    - assets/
-    # - assets/images/milkbottle.png
-    # - assets/images/baby.png
-    # - assets/images/babysta.png
-    # - assets/images/settings.png
-    # - assets/images/zzz.png
-    # - assets/images/growth.png
-    # - assets/images/note.png
-    # - assets/images/login.png
+    - assets/images/milkbottle.png
+    - assets/images/baby.png
+    - assets/images/babysta.png
+    - assets/images/settings.png
+    - assets/images/zzz.png
+    - assets/images/growth.png
+    - assets/images/note.png
+    - assets/images/login.png
+    - assets/images/vaccine.png
  
   
   # The following line ensures that the Material Icons font is

@@ -30,7 +30,7 @@ class _FeedingState extends State<Feeding> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text('data'),
+                      Text('Add New Data'),
                       SizedBox(height: 40.0),
                       RaisedButton(
                           color: Colors.pink[400],
@@ -48,7 +48,7 @@ class _FeedingState extends State<Feeding> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text('data'),
+                      Text('Add new Data'),
                       SizedBox(height: 40.0),
                       RaisedButton(
                           color: Colors.blueAccent[100],

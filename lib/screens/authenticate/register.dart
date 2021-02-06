@@ -1,3 +1,4 @@
+import 'package:ihtprototype/screens/authenticate/sign_in.dart';
 import 'package:ihtprototype/services/auth.dart';
 import 'package:ihtprototype/shared/constants.dart';
 import 'package:ihtprototype/shared/loading.dart';
@@ -32,6 +33,7 @@ class _RegisterState extends State<Register> {
             appBar: AppBar(
               backgroundColor: Colors.black87,
               elevation: 0.0,
+              automaticallyImplyLeading: false,
               title: Text('InfantHealth'),
               actions: <Widget>[
                 FlatButton.icon(

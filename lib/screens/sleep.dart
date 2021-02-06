@@ -94,7 +94,7 @@ class _FlutterStopWatchState extends State<FlutterStopWatch> {
                       });
                     });
                   },
-                  color: Colors.green[400],
+                  color: Colors.amber[900],
                   child: Text(
                     'Start',
                     style: TextStyle(
@@ -117,7 +117,7 @@ class _FlutterStopWatchState extends State<FlutterStopWatch> {
                       secondsStr = '00';
                     });
                   },
-                  color: Colors.red,
+                  color: Colors.amber[900],
                   
                   child: Text(
                     'Reset',

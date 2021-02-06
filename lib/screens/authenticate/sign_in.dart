@@ -1,4 +1,5 @@
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ihtprototype/screens/authenticate/register.dart';
 import 'package:ihtprototype/services/auth.dart';
 import 'package:ihtprototype/shared/constants.dart';
 import 'package:ihtprototype/shared/loading.dart';
@@ -32,6 +33,7 @@ class _SignInState extends State<SignIn> {
             appBar: AppBar(
               backgroundColor: Colors.black87,
               elevation: 0.0,
+              automaticallyImplyLeading: false,
               title: Text('InfantHealth',
               style: GoogleFonts.raleway(
                 fontWeight: FontWeight.w600
@@ -47,7 +49,8 @@ class _SignInState extends State<SignIn> {
                     fontWeight: FontWeight.w600
                     
                   ),),
-                  onPressed: () => widget.toggleView(),
+                                    onPressed: () => widget.toggleView(),
+                  
                 ),
               ],
             ),

@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:ihtprototype/screens/authenticate/authenticate.dart';
 import 'package:ihtprototype/screens/authenticate/sign_in.dart';
 import 'package:ihtprototype/screens/diaper.dart';
 import 'package:ihtprototype/screens/feeding.dart';
+import 'package:ihtprototype/screens/home/home.dart';
 import 'package:ihtprototype/screens/sleep.dart';
+import 'package:ihtprototype/screens/vaccscreen.dart';
 import 'package:ihtprototype/services/auth.dart';
 // import 'package:ihtprototype/screens/nursing.dart';
 
 import 'package:google_fonts/google_fonts.dart';
-
 
 class DrawerCode extends StatelessWidget {
   final AuthService _auth = AuthService();
@@ -84,8 +86,10 @@ class DrawerCode extends StatelessWidget {
               // Update the state of the app.
               // ...
               Navigator.pop(context);
-              Navigator.push(context,
-                  new MaterialPageRoute(builder: (context) => new FlutterStopWatch()));
+              Navigator.push(
+                  context,
+                  new MaterialPageRoute(
+                      builder: (context) => new FlutterStopWatch()));
             },
           ),
 
@@ -105,14 +109,19 @@ class DrawerCode extends StatelessWidget {
           ),
           ListTile(
             title: Text(
-              'Notepad',
+              'Vaccinations',
               style: TextStyle(fontSize: 16),
             ),
             leading: SizedBox(
                 height: 37.0,
                 width: 50.0, // fixed width and height
-                child: Image.asset('assets/images/note.png')),
+                child: Image.asset('assets/images/vaccine.png')),
             onTap: () {
+              Navigator.pop(context);
+              Navigator.push(
+                  context,
+                  new MaterialPageRoute(
+                      builder: (context) => new VaccScreen()));
               // Update the state of the app.
               // ...
             },
@@ -142,6 +151,11 @@ class DrawerCode extends StatelessWidget {
                   child: Image.asset('assets/images/login.png')),
               onTap: () async {
                 await _auth.signOut();
+                Navigator.pop(context);
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => Authenticate()),
+                );
               }),
         ],
       ),

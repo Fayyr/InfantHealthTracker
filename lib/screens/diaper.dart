@@ -31,6 +31,7 @@ class _DiaperState extends State<Diaper> {
               child: Column(
                 children: <Widget>[
                   FloatingActionButton(
+                    backgroundColor: Colors.amber[900],
                     onPressed: null,
                     heroTag: 'btn1',
                     child: Text('Wet'),
@@ -46,6 +47,7 @@ class _DiaperState extends State<Diaper> {
                       padding: EdgeInsets.fromLTRB(50, 0, 50, 0)),
                   SizedBox(height: 50),
                   FloatingActionButton(
+                    backgroundColor: Colors.amber[900],
                     onPressed: null,
                     heroTag: "btn2",
                     child: Text(
