@@ -20,7 +20,7 @@ class _DiaperState extends State<Diaper> {
   Widget build(BuildContext context) {
     return Container(
       child: Scaffold(
-          backgroundColor: Colors.amber[50],
+          backgroundColor: Colors.blue[50],
           resizeToAvoidBottomPadding: false,
           appBar: AppBar(
             title: Text('Diaper Counter', style: GoogleFonts.laila()),
