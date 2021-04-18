@@ -2,6 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ihtprototype/screens/vaccscreen.dart';
 import 'package:ihtprototype/models/vaccmodel.dart';
 
+import 'package:ihtprototype/models/feedmodel.dart';
+
 class DatabaseService {
   //vacc
   final String uid;
@@ -51,4 +53,29 @@ class DatabaseService {
   // Stream<List<Growth>> get growths {
   //   return growthCollection.snapshots().map(_growthListFromSnapshot);
   // }
+  // final String uid;
+  
+
+  final CollectionReference feedinationCollection =
+      Firestore.instance.collection('feedinations');
+
+  Future updateFeedineData(String name, String date,String time) async {
+    return await feedinationCollection.document(uid).setData({
+      'name': name,
+      'date': date,
+      'time' :time,
+    });
+  }
+
+  //vacc list from snapshot
+  List<Feedination> _feedinationListFromSnapshot(QuerySnapshot snapshot) {
+    return snapshot.documents.map((doc) {
+      return Feedination(name: doc.data['name'], date: doc.data['date'],time:doc.data['time']);
+    }).toList();
+  }
+
+  //get vacc stream
+  Stream<List<Feedination>> get feedinations {
+    return feedinationCollection.snapshots().map(_feedinationListFromSnapshot);
+  }
 }

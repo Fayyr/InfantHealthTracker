@@ -56,9 +56,11 @@ class _FlutterStopWatchState extends State<FlutterStopWatch> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.amber[50],
-          resizeToAvoidBottomPadding: false,
-      appBar: AppBar(title: Text("Sleep Timer"),
-      backgroundColor: Colors.black87,),
+      resizeToAvoidBottomPadding: false,
+      appBar: AppBar(
+        title: Text("Sleep Timer"),
+        backgroundColor: Colors.black87,
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -74,7 +76,6 @@ class _FlutterStopWatchState extends State<FlutterStopWatch> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 RaisedButton(
-                  
                   padding:
                       EdgeInsets.symmetric(horizontal: 20.0, vertical: 8.0),
                   onPressed: () {
@@ -97,17 +98,13 @@ class _FlutterStopWatchState extends State<FlutterStopWatch> {
                   color: Colors.amber[900],
                   child: Text(
                     'Start',
-                    style: TextStyle(
-                      fontSize: 20.0,
-                      color: Colors.white
-                    ),
+                    style: TextStyle(fontSize: 20.0, color: Colors.white),
                   ),
                 ),
                 SizedBox(width: 40.0),
                 RaisedButton(
                   padding:
                       EdgeInsets.symmetric(horizontal: 20.0, vertical: 8.0),
-                      
                   onPressed: () {
                     timerSubscription.cancel();
                     timerStream = null;
@@ -118,7 +115,6 @@ class _FlutterStopWatchState extends State<FlutterStopWatch> {
                     });
                   },
                   color: Colors.amber[900],
-                  
                   child: Text(
                     'Reset',
                     style: TextStyle(

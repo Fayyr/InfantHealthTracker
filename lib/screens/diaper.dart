@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinbox/flutter_spinbox.dart';
 import 'package:ihtprototype/shared/constants.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Diaper extends StatefulWidget {
   @override
@@ -19,10 +20,10 @@ class _DiaperState extends State<Diaper> {
   Widget build(BuildContext context) {
     return Container(
       child: Scaffold(
-        backgroundColor: Colors.amber[50],
+          backgroundColor: Colors.amber[50],
           resizeToAvoidBottomPadding: false,
           appBar: AppBar(
-            title: Text('Diaper'),
+            title: Text('Diaper Counter', style: GoogleFonts.laila()),
             backgroundColor: Colors.black87,
           ),
           body: Center(
@@ -42,7 +43,6 @@ class _DiaperState extends State<Diaper> {
                         min: 0,
                         max: 100,
                         value: wet,
-                        
                       ),
                       padding: EdgeInsets.fromLTRB(50, 0, 50, 0)),
                   SizedBox(height: 50),
@@ -52,6 +52,7 @@ class _DiaperState extends State<Diaper> {
                     heroTag: "btn2",
                     child: Text(
                       'Dirty',
+                      style: GoogleFonts.laila(),
                     ),
                   ),
                   SizedBox(height: 20),
@@ -60,10 +61,8 @@ class _DiaperState extends State<Diaper> {
                         min: 0,
                         max: 100,
                         value: 0,
-                        
                       ),
                       padding: EdgeInsets.fromLTRB(50, 0, 50, 0)),
-                      
                 ],
               ),
             ),

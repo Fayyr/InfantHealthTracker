@@ -5,13 +5,12 @@ import 'package:ihtprototype/screens/feeding.dart';
 import 'package:ihtprototype/screens/sleep.dart';
 import 'package:ihtprototype/services/auth.dart';
 import 'package:ihtprototype/shared/drawer.dart';
+import 'package:ihtprototype/screens/home/milestones/milestones.dart';
 // import 'package:ihtprototype/screens/nursing.dart';
 
 import 'package:google_fonts/google_fonts.dart';
 
 class Home extends StatelessWidget {
-  
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -40,8 +39,6 @@ class Home extends StatelessWidget {
     );
   }
 }
-
-
 
 //Drawer Code
 // class DrawerCode extends StatelessWidget {

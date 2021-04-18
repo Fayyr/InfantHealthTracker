@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:ihtprototype/screens/authenticate/authenticate.dart';
 import 'package:ihtprototype/screens/authenticate/sign_in.dart';
 import 'package:ihtprototype/screens/diaper.dart';
-import 'package:ihtprototype/screens/feeding.dart';
+import 'package:ihtprototype/screens/feedscreen.dart';
 import 'package:ihtprototype/screens/home/home.dart';
+import 'package:ihtprototype/screens/home/milestones/milestones.dart';
 import 'package:ihtprototype/screens/sleep.dart';
+import 'package:ihtprototype/screens/test.dart';
 import 'package:ihtprototype/screens/vaccscreen.dart';
 import 'package:ihtprototype/services/auth.dart';
 // import 'package:ihtprototype/screens/nursing.dart';
@@ -45,7 +47,7 @@ class DrawerCode extends StatelessWidget {
               // Update the state of the app.
               Navigator.pop(context);
               Navigator.push(context,
-                  new MaterialPageRoute(builder: (context) => new Feeding()));
+                  new MaterialPageRoute(builder: (context) => new FeedScreen()));
               // ...
             },
           ),
@@ -92,7 +94,25 @@ class DrawerCode extends StatelessWidget {
                       builder: (context) => new FlutterStopWatch()));
             },
           ),
-
+          ListTile(
+            title: Text(
+              'Milestones',
+              style: TextStyle(fontSize: 16),
+            ),
+            leading: SizedBox(
+                height: 50.0,
+                width: 50.0, // fixed width and height
+                child: Image.asset('assets/images/babybrains.png')),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.push(
+                  context,
+                  new MaterialPageRoute(
+                      builder: (context) => new Milestones()));
+              // Update the state of the app.
+              // ...
+            },
+          ),
           ListTile(
             title: Text(
               'Growth',
