@@ -3,8 +3,9 @@ import 'package:ihtprototype/screens/authenticate/authenticate.dart';
 import 'package:ihtprototype/screens/authenticate/sign_in.dart';
 import 'package:ihtprototype/screens/diaper.dart';
 import 'package:ihtprototype/screens/feedscreen.dart';
+import 'package:ihtprototype/screens/growth.dart';
 import 'package:ihtprototype/screens/home/home.dart';
-import 'package:ihtprototype/screens/home/milestones/milestones.dart';
+import 'package:ihtprototype/screens/milestones/milestones.dart';
 import 'package:ihtprototype/screens/sleep.dart';
 import 'package:ihtprototype/screens/test.dart';
 import 'package:ihtprototype/screens/vaccscreen.dart';
@@ -30,7 +31,7 @@ class DrawerCode extends StatelessWidget {
                   fontSize: 22, fontWeight: FontWeight.w600),
             ),
             decoration: BoxDecoration(
-                color: Colors.amberAccent[100],
+                color: Colors.pink[50],
                 image: DecorationImage(
                     image: AssetImage("assets/images/baby.png"))),
           ),
@@ -42,24 +43,26 @@ class DrawerCode extends StatelessWidget {
             leading: SizedBox(
                 height: 45.0,
                 width: 50.0, // fixed width and height
-                child: Image.asset('assets/images/milkbottle.png')),
+                child: Image.asset('assets/images/diet.png')),
             onTap: () {
               // Update the state of the app.
               Navigator.pop(context);
-              Navigator.push(context,
-                  new MaterialPageRoute(builder: (context) => new FeedScreen()));
+              Navigator.push(
+                  context,
+                  new MaterialPageRoute(
+                      builder: (context) => new FeedScreen()));
               // ...
             },
           ),
           ListTile(
             title: Text(
-              'Diaper',
+              '   Diaper',
               style: TextStyle(fontSize: 16),
             ),
             leading: SizedBox(
-                height: 50.0,
-                width: 50.0, // fixed width and height
-                child: Image.asset('assets/images/babysta.png')),
+                height: 40.0,
+                width: 40.0, // fixed width and height
+                child: Image.asset('assets/images/diaper.png')),
             onTap: () {
               // Update the state of the app.
               // ...
@@ -123,6 +126,9 @@ class DrawerCode extends StatelessWidget {
                 width: 50.0, // fixed width and height
                 child: Image.asset('assets/images/growth.png')),
             onTap: () {
+              Navigator.pop(context);
+              Navigator.push(context,
+                  new MaterialPageRoute(builder: (context) => new Growth()));
               // Update the state of the app.
               // ...
             },

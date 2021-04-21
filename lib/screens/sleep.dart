@@ -1,6 +1,7 @@
 import 'dart:async';
-
+import 'package:ihtprototype/shared/drawer.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class FlutterStopWatch extends StatefulWidget {
   @override
@@ -55,14 +56,30 @@ class _FlutterStopWatchState extends State<FlutterStopWatch> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.amber[50],
-      resizeToAvoidBottomPadding: false,
+      backgroundColor: Colors.white,
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        title: Text("Sleep Timer"),
-        backgroundColor: Colors.black87,
+        iconTheme: IconThemeData(color: Colors.blueGrey[800]),
+        title: Text("Sleep Timer",
+            style: GoogleFonts.josefinSans(
+                color: Colors.blueGrey[800],
+                letterSpacing: 0,
+                fontWeight: FontWeight.bold,
+                fontSize: 24)),
+        backgroundColor: Colors.white,
       ),
-      body: Center(
-        child: Column(
+      drawer: DrawerCode(),
+      body: new Stack(children: [
+        Container(
+          decoration: new BoxDecoration(
+              image: new DecorationImage(
+                  image:
+                      new AssetImage('assets/images/baby-elementson-pink.jpg'),
+                  colorFilter: new ColorFilter.mode(
+                      Colors.white.withOpacity(0.3), BlendMode.dstATop),
+                  fit: BoxFit.cover)),
+        ),
+        Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
@@ -95,7 +112,7 @@ class _FlutterStopWatchState extends State<FlutterStopWatch> {
                       });
                     });
                   },
-                  color: Colors.amber[900],
+                  color: Colors.blueGrey[900],
                   child: Text(
                     'Start',
                     style: TextStyle(fontSize: 20.0, color: Colors.white),
@@ -114,7 +131,7 @@ class _FlutterStopWatchState extends State<FlutterStopWatch> {
                       secondsStr = '00';
                     });
                   },
-                  color: Colors.amber[900],
+                  color: Colors.blueGrey[900],
                   child: Text(
                     'Reset',
                     style: TextStyle(
@@ -127,7 +144,7 @@ class _FlutterStopWatchState extends State<FlutterStopWatch> {
             ),
           ],
         ),
-      ),
+      ]),
     );
   }
 }

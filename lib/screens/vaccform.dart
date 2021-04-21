@@ -39,10 +39,10 @@ class _VaccFormState extends State<VaccForm> {
           ),
           SizedBox(height: 20.0),
           RaisedButton(
-              color: Colors.orange,
+              color: Colors.pink[50],
               child: Text(
                 'Add',
-                style: TextStyle(color: Colors.white),
+                style: TextStyle(color: Colors.blueGrey[700]),
               ),
               onPressed: () async {
                 await DatabaseService(uid: user.uid)

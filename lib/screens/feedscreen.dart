@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ihtprototype/screens/feedform.dart';
 import 'package:ihtprototype/shared/drawer.dart';
 import 'package:ihtprototype/services/database.dart';
-
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 import 'package:ihtprototype/screens/feedinelist.dart';
@@ -25,23 +25,41 @@ class FeedScreen extends StatelessWidget {
       value: DatabaseService().feedinations,
       child: Container(
           child: Scaffold(
-        backgroundColor: Colors.amber[50],
-        appBar: AppBar(
-          title: Text('Meals'),
-          backgroundColor: Colors.black87,
-          actions: <Widget>[
-            FlatButton.icon(
-              icon: Icon(Icons.add),
-              label: Text('New'),
-              color: Colors.orange,
-              onPressed: () => _showaddfeedinationpanel(),
-            ) 
-          ],
-        ),
-        drawer: DrawerCode(),
-        body: FeedineList(),
-        
-      )),
+              backgroundColor: Colors.white,
+              appBar: AppBar(
+                iconTheme: IconThemeData(color: Colors.blueAccent[50]),
+                title: Text('Meals',
+                    style: GoogleFonts.josefinSans(
+                        color: Colors.blueGrey[800],
+                        letterSpacing: 0,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 26)),
+                backgroundColor: Colors.white,
+                actions: <Widget>[
+                  FlatButton.icon(
+                    icon: Icon(Icons.add),
+                    label: Text('New'),
+                    color: Colors.pink[50],
+                    onPressed: () => _showaddfeedinationpanel(),
+                  )
+                ],
+              ),
+              drawer: DrawerCode(),
+              body: new Stack(
+                children: [
+                  FeedineList(),
+                  Container(
+                    decoration: new BoxDecoration(
+                        image: new DecorationImage(
+                            image: new AssetImage(
+                                'assets/images/baby-elementson-pink.jpg'),
+                            colorFilter: new ColorFilter.mode(
+                                Colors.white.withOpacity(0.3),
+                                BlendMode.dstATop),
+                            fit: BoxFit.cover)),
+                  ),
+                ],
+              ))),
     );
   }
 }

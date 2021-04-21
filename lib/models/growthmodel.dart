@@ -1,6 +1,6 @@
-class Vaccination {
+class GrowthCounter {
   final String height;
   final String weight;
-
-  Vaccination({this.height, this.weight});
+  final String date;
+  GrowthCounter({this.height, this.weight, this.date});
 }

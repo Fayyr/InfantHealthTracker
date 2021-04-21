@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ihtprototype/screens/vaccform.dart';
 import 'package:ihtprototype/shared/drawer.dart';
 import 'package:ihtprototype/services/database.dart';
-
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 import 'package:ihtprototype/screens/vaccinelist.dart';
@@ -25,22 +25,40 @@ class VaccScreen extends StatelessWidget {
       value: DatabaseService().vaccinations,
       child: Container(
           child: Scaffold(
-        backgroundColor: Colors.amber[50],
+        backgroundColor: Colors.white,
         appBar: AppBar(
-          title: Text('Vaccinations'),
-          backgroundColor: Colors.black87,
+          iconTheme: IconThemeData(color: Colors.blueGrey[800]),
+          title: Text('Vaccinations',
+              style: GoogleFonts.josefinSans(
+                  color: Colors.blueGrey[800],
+                  letterSpacing: 0,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 24)),
+          backgroundColor: Colors.white,
           actions: <Widget>[
             FlatButton.icon(
               icon: Icon(Icons.add),
               label: Text('New'),
-              color: Colors.orange,
+              color: Colors.pink[50],
               onPressed: () => _showaddvaccinationpanel(),
-            ) 
+            )
           ],
         ),
         drawer: DrawerCode(),
-        body: VaccineList(),
-        
+        body: new Stack(
+          children: [
+            VaccineList(),
+            Container(
+              decoration: new BoxDecoration(
+                  image: new DecorationImage(
+                      image: new AssetImage(
+                          'assets/images/baby-elementson-pink.jpg'),
+                      colorFilter: new ColorFilter.mode(
+                          Colors.white.withOpacity(0.3), BlendMode.dstATop),
+                      fit: BoxFit.cover)),
+            ),
+          ],
+        ),
       )),
     );
   }
