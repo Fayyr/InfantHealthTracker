@@ -9,14 +9,11 @@ class Feeding extends StatefulWidget {
 }
 
 class _FeedingState extends State<Feeding> {
-  
-
   @override
   Widget build(BuildContext context) {
     return Container(
-      
       child: Scaffold(
-        backgroundColor: Colors.amber[50],
+          backgroundColor: Colors.amber[50],
           appBar: AppBar(
             title: Text('Feeding'),
             backgroundColor: Colors.black87,
@@ -38,9 +35,7 @@ class _FeedingState extends State<Feeding> {
                             'Liquids',
                             style: TextStyle(color: Colors.white),
                           ),
-                          onPressed: () {
-                            
-                          })
+                          onPressed: () {})
                     ],
                   ),
                 ),
@@ -56,9 +51,7 @@ class _FeedingState extends State<Feeding> {
                             'Solids',
                             style: TextStyle(color: Colors.white),
                           ),
-                          onPressed: () {
-                            
-                          })
+                          onPressed: () {})
                     ],
                   ),
                 )

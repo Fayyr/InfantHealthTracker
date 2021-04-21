@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ihtprototype/screens/vaccscreen.dart';
 import 'package:ihtprototype/models/vaccmodel.dart';
-
+import 'package:ihtprototype/models/growthmodel.dart';
 import 'package:ihtprototype/models/feedmodel.dart';
 
 class DatabaseService {
@@ -31,7 +31,7 @@ class DatabaseService {
     return vaccinationCollection.snapshots().map(_vaccinationListFromSnapshot);
   }
   //growth----------------------------------------------------------------------------------------------------
-  
+
   // final CollectionReference growthCollection =
   //     Firestore.instance.collection('growths');
 
@@ -54,28 +54,58 @@ class DatabaseService {
   //   return growthCollection.snapshots().map(_growthListFromSnapshot);
   // }
   // final String uid;
-  
 
   final CollectionReference feedinationCollection =
       Firestore.instance.collection('feedinations');
 
-  Future updateFeedineData(String name, String date,String time) async {
+  Future updateFeedineData(String name, String date, String time) async {
     return await feedinationCollection.document(uid).setData({
       'name': name,
       'date': date,
-      'time' :time,
+      'time': time,
     });
   }
 
   //vacc list from snapshot
   List<Feedination> _feedinationListFromSnapshot(QuerySnapshot snapshot) {
     return snapshot.documents.map((doc) {
-      return Feedination(name: doc.data['name'], date: doc.data['date'],time:doc.data['time']);
+      return Feedination(
+          name: doc.data['name'],
+          date: doc.data['date'],
+          time: doc.data['time']);
     }).toList();
   }
 
   //get vacc stream
   Stream<List<Feedination>> get feedinations {
     return feedinationCollection.snapshots().map(_feedinationListFromSnapshot);
+  }
+
+  //.......................GROWTH............................................//
+
+  final CollectionReference growthCollection =
+      Firestore.instance.collection('growth');
+
+  Future updateGrowthData(String date, String height, String weight) async {
+    return await growthCollection.document(uid).setData({
+      'date': date,
+      'height': height,
+      'weight': weight,
+    });
+  }
+
+  //vacc list from snapshot
+  List<GrowthCounter> _growthListFromSnapshot(QuerySnapshot snapshot) {
+    return snapshot.documents.map((doc) {
+      return GrowthCounter(
+          date: doc.data['date'],
+          height: doc.data['height'],
+          weight: doc.data['weight']);
+    }).toList();
+  }
+
+  //get vacc stream
+  Stream<List<GrowthCounter>> get growth {
+    return growthCollection.snapshots().map(_growthListFromSnapshot);
   }
 }

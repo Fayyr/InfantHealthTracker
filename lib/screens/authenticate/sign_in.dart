@@ -28,29 +28,29 @@ class _SignInState extends State<SignIn> {
     return loading
         ? Loading()
         : Scaffold(
-            resizeToAvoidBottomPadding: false,
+            resizeToAvoidBottomInset: false,
             backgroundColor: Colors.amber[50],
             appBar: AppBar(
               backgroundColor: Colors.black87,
               elevation: 0.0,
               automaticallyImplyLeading: false,
-              title: Text('InfantHealth',
-              style: GoogleFonts.raleway(
-                fontWeight: FontWeight.w600
-              ),),
+              title: Text(
+                'InfantHealth',
+                style: GoogleFonts.raleway(fontWeight: FontWeight.w600),
+              ),
               actions: <Widget>[
                 FlatButton.icon(
-                  icon: Icon(Icons.person,
-                  color:Colors.white,),
-                  label: Text('Register',
-                  
-                  style: GoogleFonts.raleway(
-                    textStyle: TextStyle(color: Colors.white),
-                    fontWeight: FontWeight.w600
-                    
-                  ),),
-                                    onPressed: () => widget.toggleView(),
-                  
+                  icon: Icon(
+                    Icons.person,
+                    color: Colors.white,
+                  ),
+                  label: Text(
+                    'Register',
+                    style: GoogleFonts.raleway(
+                        textStyle: TextStyle(color: Colors.white),
+                        fontWeight: FontWeight.w600),
+                  ),
+                  onPressed: () => widget.toggleView(),
                 ),
               ],
             ),

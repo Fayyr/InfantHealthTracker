@@ -28,7 +28,7 @@ class _RegisterState extends State<Register> {
     return loading
         ? Loading()
         : Scaffold(
-            resizeToAvoidBottomPadding: false,
+            resizeToAvoidBottomInset: false,
             backgroundColor: Colors.amber[50],
             appBar: AppBar(
               backgroundColor: Colors.black87,
@@ -37,12 +37,16 @@ class _RegisterState extends State<Register> {
               title: Text('InfantHealth'),
               actions: <Widget>[
                 FlatButton.icon(
-                  icon: Icon(Icons.person,
-                  color: Colors.white,),
-                  label: Text('Sign In',
-                  style: GoogleFonts.raleway(
-                    textStyle: TextStyle(color: Colors.white),
-                    fontWeight: FontWeight.w600),),
+                  icon: Icon(
+                    Icons.person,
+                    color: Colors.white,
+                  ),
+                  label: Text(
+                    'Sign In',
+                    style: GoogleFonts.raleway(
+                        textStyle: TextStyle(color: Colors.white),
+                        fontWeight: FontWeight.w600),
+                  ),
                   onPressed: () => widget.toggleView(),
                 ),
               ],
