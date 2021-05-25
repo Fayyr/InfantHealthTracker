@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:ihtprototype/screens/feedform.dart';
+import 'package:ihtprototype/screens/feeding/feedform.dart';
 import 'package:ihtprototype/shared/drawer.dart';
 import 'package:ihtprototype/services/database.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-import 'package:ihtprototype/screens/feedinelist.dart';
+import 'package:ihtprototype/screens/feeding/feedinelist.dart';
 import 'package:ihtprototype/models/feedmodel.dart';
 
 class FeedScreen extends StatelessWidget {

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';
 import 'package:ihtprototype/services/database.dart';
-import 'package:ihtprototype/screens/vaccscreen.dart';
+import 'package:ihtprototype/screens/vaccine/vaccscreen.dart';
 import 'package:ihtprototype/models/vaccmodel.dart';
 import 'package:ihtprototype/shared/vaccinationtile.dart';
 

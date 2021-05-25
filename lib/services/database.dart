@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:ihtprototype/screens/vaccscreen.dart';
+import 'package:ihtprototype/screens/vaccine/vaccscreen.dart';
 import 'package:ihtprototype/models/vaccmodel.dart';
 import 'package:ihtprototype/models/growthmodel.dart';
 import 'package:ihtprototype/models/feedmodel.dart';

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:ihtprototype/screens/authenticate/sign_in.dart';
 import 'package:ihtprototype/screens/diaper.dart';
-import 'package:ihtprototype/screens/feeding.dart';
-import 'package:ihtprototype/screens/growth.dart';
+import 'package:ihtprototype/screens/feeding/feeding.dart';
+import 'package:ihtprototype/screens/growth/growth.dart';
 import 'package:ihtprototype/screens/sleep.dart';
-import 'package:ihtprototype/screens/vaccscreen.dart';
+import 'package:ihtprototype/screens/vaccine/vaccine.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:ihtprototype/services/auth.dart';
 import 'package:ihtprototype/shared/drawer.dart';
@@ -174,7 +174,7 @@ class Home extends StatelessWidget {
                         Navigator.push(
                             context,
                             new MaterialPageRoute(
-                                builder: (context) => new VaccScreen()));
+                                builder: (context) => new Vaccine()));
                       },
                       child: new Column(
                         crossAxisAlignment: CrossAxisAlignment.center,

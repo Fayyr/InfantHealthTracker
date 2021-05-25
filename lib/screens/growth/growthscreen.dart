@@ -1,53 +1,49 @@
 import 'package:flutter/material.dart';
-import 'package:ihtprototype/screens/vaccform.dart';
+import 'package:ihtprototype/screens/growth/growthform.dart';
 import 'package:ihtprototype/shared/drawer.dart';
 import 'package:ihtprototype/services/database.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-import 'package:ihtprototype/screens/vaccinelist.dart';
-import 'package:ihtprototype/models/vaccmodel.dart';
+import 'package:ihtprototype/screens/growth/growthlist.dart';
+import 'package:ihtprototype/models/growthmodel.dart';
 
-class VaccScreen extends StatelessWidget {
+class GrowthScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    void _showaddvaccinationpanel() {
+    void _showaddgrowthpanel() {
       showModalBottomSheet(
           context: context,
           builder: (context) {
             return Container(
                 padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 60.0),
-                child: VaccForm());
+                child: GrowthForm());
           });
     }
 
-    return StreamProvider<List<Vaccination>>.value(
-      value: DatabaseService().vaccinations,
+    return StreamProvider<List<GrowthCounter>>.value(
+      value: DatabaseService().growth,
       child: Container(
           child: Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
           iconTheme: IconThemeData(color: Colors.blueGrey[800]),
-          title: Text('Vaccinations',
-              style: GoogleFonts.josefinSans(
-                  color: Colors.blueGrey[800],
-                  letterSpacing: 0,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 24)),
+          title: Text('  Growth Records',
+              style: TextStyle(
+                  color: Colors.blueGrey[800], letterSpacing: 0, fontSize: 20)),
           backgroundColor: Colors.white,
           actions: <Widget>[
             FlatButton.icon(
               icon: Icon(Icons.add),
               label: Text('New'),
               color: Colors.pink[50],
-              onPressed: () => _showaddvaccinationpanel(),
+              onPressed: () => _showaddgrowthpanel(),
             )
           ],
         ),
-        drawer: DrawerCode(),
         body: new Stack(
           children: [
-            VaccineList(),
+            GrowthList(),
             Container(
               decoration: new BoxDecoration(
                   image: new DecorationImage(

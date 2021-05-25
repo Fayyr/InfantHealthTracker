@@ -1,12 +1,11 @@
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
-import 'package:ihtprototype/screens/growthlist.dart';
-import 'package:ihtprototype/screens/growthscreen.dart';
+import 'package:ihtprototype/screens/vaccine/vaccscreen.dart';
 import 'package:ihtprototype/shared/drawer.dart';
-import 'growthchart.dart';
+import 'vaccinechart.dart';
 
-class Growth extends StatelessWidget {
+class Vaccine extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -40,18 +39,18 @@ class Growth extends StatelessWidget {
                 ),
               ],
             ),
-            title: Text('GROWTH',
+            title: Text('VACCINES',
                 style: GoogleFonts.josefinSans(
                     color: Colors.blueGrey[800],
                     letterSpacing: 0,
                     fontWeight: FontWeight.bold,
-                    fontSize: 22)),
+                    fontSize: 20)),
           ),
           drawer: DrawerCode(),
           body: TabBarView(
             children: [
               DataTableDemo(),
-              GrowthScreen(),
+              VaccScreen(),
             ],
           ),
         ),
