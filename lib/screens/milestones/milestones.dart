@@ -278,6 +278,7 @@ class Milestones extends StatelessWidget {
                 elevation: 0.5,
                 shape: new RoundedRectangleBorder(
                     borderRadius: new BorderRadius.circular(30.0)),
+                color: Colors.white,
                 onPressed: () {
                   Navigator.pop(context);
                   Navigator.push(
@@ -285,12 +286,27 @@ class Milestones extends StatelessWidget {
                       new MaterialPageRoute(
                           builder: (context) => new NinthMonth()));
                 },
-                child: Text('9 MONTHS'),
+                child: new Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(2, 2, 2, 2),
+                      child: new Image.asset(
+                        'assets/images/nine.png',
+                        height: 50,
+                        width: 50,
+                      ),
+                    ),
+                    Text('MONTHS', style: TextStyle(color: Colors.black)),
+                  ],
+                ),
               ),
               RaisedButton(
                 elevation: 0.5,
                 shape: new RoundedRectangleBorder(
                     borderRadius: new BorderRadius.circular(30.0)),
+                color: Colors.white,
                 onPressed: () {
                   Navigator.pop(context);
                   Navigator.push(
@@ -298,12 +314,39 @@ class Milestones extends StatelessWidget {
                       new MaterialPageRoute(
                           builder: (context) => new TenthMonth()));
                 },
-                child: Text('10 MONTHS'),
+                child: new Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(8, 2, 0, 2),
+                          child: new Image.asset(
+                            'assets/images/onepink.png',
+                            height: 50,
+                            width: 50,
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(0, 2, 0, 2),
+                          child: new Image.asset(
+                            'assets/images/zero.png',
+                            height: 50,
+                            width: 50,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Text('MONTHS', style: TextStyle(color: Colors.black)),
+                  ],
+                ),
               ),
               RaisedButton(
                 elevation: 0.5,
                 shape: new RoundedRectangleBorder(
                     borderRadius: new BorderRadius.circular(30.0)),
+                color: Colors.white,
                 onPressed: () {
                   Navigator.pop(context);
                   Navigator.push(
@@ -311,12 +354,39 @@ class Milestones extends StatelessWidget {
                       new MaterialPageRoute(
                           builder: (context) => new EleventhMonth()));
                 },
-                child: Text('11 MONTHS'),
+                child: new Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(8, 2, 0, 2),
+                          child: new Image.asset(
+                            'assets/images/one.png',
+                            height: 50,
+                            width: 50,
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(0, 2, 0, 2),
+                          child: new Image.asset(
+                            'assets/images/one.png',
+                            height: 50,
+                            width: 50,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Text('MONTHS', style: TextStyle(color: Colors.black)),
+                  ],
+                ),
               ),
               RaisedButton(
                 elevation: 0.5,
                 shape: new RoundedRectangleBorder(
                     borderRadius: new BorderRadius.circular(30.0)),
+                color: Colors.white,
                 onPressed: () {
                   Navigator.pop(context);
                   Navigator.push(
@@ -324,7 +394,33 @@ class Milestones extends StatelessWidget {
                       new MaterialPageRoute(
                           builder: (context) => new TwelvethMonth()));
                 },
-                child: Text('12 MONTHS'),
+                child: new Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(8, 2, 0, 2),
+                          child: new Image.asset(
+                            'assets/images/oneblue.png',
+                            height: 50,
+                            width: 50,
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(0, 2, 0, 2),
+                          child: new Image.asset(
+                            'assets/images/twoblue.png',
+                            height: 50,
+                            width: 50,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Text('MONTHS', style: TextStyle(color: Colors.black)),
+                  ],
+                ),
               ),
             ],
           ),

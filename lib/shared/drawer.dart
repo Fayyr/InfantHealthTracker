@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:ihtprototype/screens/authenticate/authenticate.dart';
-import 'package:ihtprototype/screens/authenticate/sign_in.dart';
 import 'package:ihtprototype/screens/diaper.dart';
-import 'package:ihtprototype/screens/feedscreen.dart';
-import 'package:ihtprototype/screens/growth.dart';
+import 'package:ihtprototype/screens/feeding/feedscreen.dart';
+import 'package:ihtprototype/screens/growth/growth.dart';
 import 'package:ihtprototype/screens/home/home.dart';
 import 'package:ihtprototype/screens/milestones/milestones.dart';
+import 'package:ihtprototype/screens/testnotepad.dart';
 import 'package:ihtprototype/screens/sleep.dart';
-import 'package:ihtprototype/screens/test.dart';
-import 'package:ihtprototype/screens/vaccscreen.dart';
+import 'package:ihtprototype/screens/vaccine/vaccine.dart';
 import 'package:ihtprototype/services/auth.dart';
 // import 'package:ihtprototype/screens/nursing.dart';
 
@@ -33,7 +32,25 @@ class DrawerCode extends StatelessWidget {
             decoration: BoxDecoration(
                 color: Colors.pink[50],
                 image: DecorationImage(
-                    image: AssetImage("assets/images/baby.png"))),
+                    alignment: Alignment.bottomRight,
+                    image: AssetImage("assets/images/baby-boy.png"))),
+          ),
+          ListTile(
+            title: Text(
+              ' Home',
+              style: TextStyle(fontSize: 16),
+            ),
+            leading: SizedBox(
+                height: 30.0,
+                width: 40.0, // fixed width and height
+                child: Image.asset('assets/images/home.png')),
+            onTap: () {
+              // Update the state of the app.
+              Navigator.pop(context);
+              Navigator.push(context,
+                  new MaterialPageRoute(builder: (context) => new Home()));
+              // ...
+            },
           ),
           ListTile(
             title: Text(
@@ -41,8 +58,8 @@ class DrawerCode extends StatelessWidget {
               style: TextStyle(fontSize: 16),
             ),
             leading: SizedBox(
-                height: 45.0,
-                width: 50.0, // fixed width and height
+                height: 35.0,
+                width: 45.0, // fixed width and height
                 child: Image.asset('assets/images/diet.png')),
             onTap: () {
               // Update the state of the app.
@@ -56,11 +73,11 @@ class DrawerCode extends StatelessWidget {
           ),
           ListTile(
             title: Text(
-              '   Diaper',
+              ' Diaper',
               style: TextStyle(fontSize: 16),
             ),
             leading: SizedBox(
-                height: 40.0,
+                height: 35.0,
                 width: 40.0, // fixed width and height
                 child: Image.asset('assets/images/diaper.png')),
             onTap: () {
@@ -80,13 +97,13 @@ class DrawerCode extends StatelessWidget {
           // ),
           ListTile(
             title: Text(
-              'Sleep',
+              ' Sleep',
               style: TextStyle(fontSize: 16),
             ),
             leading: SizedBox(
-                height: 50.0,
-                width: 50.0, // fixed width and height
-                child: Image.asset('assets/images/zzz.png')),
+                height: 35.0,
+                width: 40.0, // fixed width and height
+                child: Image.asset('assets/images/sleeping.png')),
             onTap: () {
               // Update the state of the app.
               // ...
@@ -99,13 +116,13 @@ class DrawerCode extends StatelessWidget {
           ),
           ListTile(
             title: Text(
-              'Milestones',
+              ' Milestones',
               style: TextStyle(fontSize: 16),
             ),
             leading: SizedBox(
-                height: 50.0,
-                width: 50.0, // fixed width and height
-                child: Image.asset('assets/images/babybrains.png')),
+                height: 35.0,
+                width: 40.0, // fixed width and height
+                child: Image.asset('assets/images/ranking.png')),
             onTap: () {
               Navigator.pop(context);
               Navigator.push(
@@ -118,13 +135,13 @@ class DrawerCode extends StatelessWidget {
           ),
           ListTile(
             title: Text(
-              'Growth',
+              ' Growth',
               style: TextStyle(fontSize: 16),
             ),
             leading: SizedBox(
-                height: 50.0,
-                width: 50.0, // fixed width and height
-                child: Image.asset('assets/images/growth.png')),
+                height: 35.0,
+                width: 40.0, // fixed width and height
+                child: Image.asset('assets/images/height.png')),
             onTap: () {
               Navigator.pop(context);
               Navigator.push(context,
@@ -135,31 +152,29 @@ class DrawerCode extends StatelessWidget {
           ),
           ListTile(
             title: Text(
-              'Vaccinations',
+              ' Vaccinations',
               style: TextStyle(fontSize: 16),
             ),
             leading: SizedBox(
-                height: 37.0,
-                width: 50.0, // fixed width and height
+                height: 35.0,
+                width: 40.0, // fixed width and height
                 child: Image.asset('assets/images/vaccine.png')),
             onTap: () {
               Navigator.pop(context);
-              Navigator.push(
-                  context,
-                  new MaterialPageRoute(
-                      builder: (context) => new VaccScreen()));
+              Navigator.push(context,
+                  new MaterialPageRoute(builder: (context) => new Vaccine()));
               // Update the state of the app.
               // ...
             },
           ),
           ListTile(
             title: Text(
-              'Settings',
-              style: TextStyle(fontSize: 18),
+              ' Settings',
+              style: TextStyle(fontSize: 16),
             ),
             leading: SizedBox(
-                height: 50.0,
-                width: 45.0, // fixed width and height
+                height: 35.0,
+                width: 42.0, // fixed width and height
                 child: Image.asset('assets/images/settings.png')),
             onTap: () {
               // Update the state of the app.
@@ -167,14 +182,31 @@ class DrawerCode extends StatelessWidget {
             },
           ),
           ListTile(
+            title: Text(
+              ' Notepad',
+              style: TextStyle(fontSize: 16),
+            ),
+            leading: SizedBox(
+                height: 35.0,
+                width: 40.0, // fixed width and height
+                child: Image.asset('assets/images/note.png')),
+            onTap: () {
+              // Update the state of the app.
+              // ...
+              Navigator.pop(context);
+              Navigator.push(context,
+                  new MaterialPageRoute(builder: (context) => new TodoApp()));
+            },
+          ),
+          ListTile(
               title: Text(
-                'Logout',
-                style: TextStyle(fontSize: 18),
+                ' Logout',
+                style: TextStyle(fontSize: 16),
               ),
               leading: SizedBox(
                   height: 38.0,
                   width: 45.0, // fixed width and height
-                  child: Image.asset('assets/images/login.png')),
+                  child: Image.asset('assets/images/quit.png')),
               onTap: () async {
                 await _auth.signOut();
                 Navigator.pop(context);

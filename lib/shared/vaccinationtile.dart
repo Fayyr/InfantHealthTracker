@@ -3,12 +3,9 @@ import 'package:flutter/material.dart';
 
 class VaccinationTile extends StatelessWidget {
   final Vaccination vaccination;
-    VaccinationTile({
-      this.vaccination
-    });
+  VaccinationTile({this.vaccination});
   @override
   Widget build(BuildContext context) {
-    
     return Padding(
       padding: EdgeInsets.only(top: 8.0),
       child: Card(
@@ -17,7 +14,7 @@ class VaccinationTile extends StatelessWidget {
           leading: CircleAvatar(
             radius: 25.0,
             backgroundColor: Colors.white,
-            backgroundImage: AssetImage('assets/images/vaccine.png'),
+            backgroundImage: AssetImage('assets/images/vaccinesbnw.png'),
           ),
           title: Text(vaccination.name),
           subtitle: Text('Date taken on: ${vaccination.date}'),
