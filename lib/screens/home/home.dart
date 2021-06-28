@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ihtprototype/screens/authenticate/sign_in.dart';
 import 'package:ihtprototype/screens/diaper.dart';
-import 'package:ihtprototype/screens/feeding/feeding.dart';
+import 'package:ihtprototype/screens/feeding/feedscreen.dart';
+
 import 'package:ihtprototype/screens/growth/growth.dart';
 import 'package:ihtprototype/screens/sleep.dart';
 import 'package:ihtprototype/screens/vaccine/vaccine.dart';
@@ -109,7 +110,7 @@ class Home extends StatelessWidget {
                       Navigator.push(
                           context,
                           new MaterialPageRoute(
-                              builder: (context) => new Feeding()));
+                              builder: (context) => new FeedScreen()));
                     },
                     child: new Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
